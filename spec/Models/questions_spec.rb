@@ -10,7 +10,7 @@ describe "Questions" do
   end
 
   it "requires content" do
-    expect(Question.create(title: title)).to be_invalid
+    expect(Question.create(title: title)bn ).to be_invalid
   end
 
   context "#title" do

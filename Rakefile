@@ -8,5 +8,5 @@ DbcOverflow::Application.load_tasks
 
 desc 'Stop Drop and Load'
 task "reset" do
-  exec "rake db:drop db:creater db:migrate db:seed"
+  exec "rake db:drop db:create db:migrate db:seed"
 end
