@@ -5,3 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 DbcOverflow::Application.load_tasks
+
+desc 'Stop Drop and Load'
+task "reset" do
+  exec "rake db:drop db:creater db:migrate db:seed"
+end
