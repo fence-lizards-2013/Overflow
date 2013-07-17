@@ -17,6 +17,10 @@ describe "Answers" do
 		it "should NOT save if content field is missing" do 
 			expect{ Answer.create!(content: "", question_id: question_id) }.to raise_error
 		end
+
+		it "should NOT save if question_id is missing" do 
+			expect{ Answer.create!(content: content, question_id: "") }.to raise_error
+		end
 	end
 
 end
