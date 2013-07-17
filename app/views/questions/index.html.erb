@@ -2,3 +2,9 @@
   <h1>DO I LOOK FAT IN DIS??</h1>
 </header>
 
+<div id='homepage-content'>
+  <% @questions.each do |question| %>
+    <p><%= link_to "#{question.title}", question %></p>
+  <% end %>
+</div>
+
