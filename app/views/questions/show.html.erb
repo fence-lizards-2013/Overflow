@@ -1,1 +1,8 @@
-<h1> Sup everybody </h1>
+<h1><%= @question.title %></h1>
+
+<ul>
+	<% @question.answers.each do |answer| %>
+		<li><%= answer.content %></li>
+	<% end %>
+</ul>
+
