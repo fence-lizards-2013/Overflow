@@ -6,9 +6,9 @@
 
 <%= form_for @question do |f| %>
  
-  <%= f.text_field :title , placeholder: "Title" %><br />
+  <%= f.text_field :title , placeholder: "Title", cols: 90 %><br />
 
-  <%= f.text_area :content, placeholder: "Content" %><br />
+  <%= f.text_area :content, placeholder: "Content", cols: 90, rows: 10  %><br />
 
 <%= f.submit %>
 <% end %>
