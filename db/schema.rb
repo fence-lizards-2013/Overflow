@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(:version => 20130718172839) do
   create_table "questions", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "view_count"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "view_count", :default => 0
   end
 
 end
