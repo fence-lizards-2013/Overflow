@@ -13,5 +13,6 @@ require 'faker'
 end
 
 30.times do
-  Answer.create(content:Faker::Lorem.sentence(3),question_id:rand(1..10))  
+  Answer.create(content:Faker::Lorem.sentence(3),answerable_id:rand(1..10), answerable_type: "Question")  
 end
+
