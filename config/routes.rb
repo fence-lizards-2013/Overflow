@@ -1,5 +1,6 @@
 DbcOverflow::Application.routes.draw do
   resources :questions
+  resources :answers, only: [:new, :create]
 
   root to: "questions#index"
   # The priority is based upon order of creation:

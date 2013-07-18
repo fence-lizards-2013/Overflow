@@ -10,3 +10,8 @@
 	<% end %>
 </ul>
 
+<%= form_for @answer do |f| %>
+	<%= f.text_area :content, placeholder: "Answer the Question" %><br />
+	<%= f.hidden_field :question_id, :value => @question.id %>
+	<%= f.submit %>
+<% end %>
