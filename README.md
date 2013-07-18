@@ -1,11 +1,11 @@
-== Todo List (Adding test as you add features)
+Todo List (Adding test as you add features)
 
 - [x] Visitors can see all questions
 - [x] Visitors can add answers 
 - [x] Visitors create an question
 - [x] Visitors create an answer
 - [ ] Visitors can reply to answers
-- [ ] Visitors can see number of views of the question
+- [x] Visitors can see number of views of the question
  
 Add Users Auth (using devise)
 - [ ] Users can create an account
