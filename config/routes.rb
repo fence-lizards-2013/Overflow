@@ -1,8 +1,13 @@
 DbcOverflow::Application.routes.draw do
-  devise_for :users
 
-  resources :questions
-  resources :answers, only: [:new, :create]
+  devise_for :users
+  resources :questions do
+    resources :answers, only: [:new, :create]
+  end
+  resources :answers, only: [:new, :create] do
+    resources :answers, only: [:new, :create] 
+  end
+
 
   root to: "questions#index"
   # The priority is based upon order of creation:

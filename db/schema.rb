@@ -11,11 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20130718172839) do
 
   create_table "answers", :force => true do |t|
     t.string  "content"
-    t.integer "question_id"
+    t.integer "answerable_id"
+    t.string  "answerable_type"
   end
 
   create_table "questions", :force => true do |t|

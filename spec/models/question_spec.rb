@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Questions" do
+describe Question do
   let(:title) { 'Question1' }
   let(:content) { 'Content1' }
   let(:question) { Question.new(title: title, content: content)  }

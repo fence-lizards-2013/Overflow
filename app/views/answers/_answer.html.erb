@@ -1,0 +1,8 @@
+<div class="answer">
+  <li><%= answer.content %></li>
+  <ul class="replies">
+  </ul>
+  <%= link_to "Reply", new_answer_answer_path(answer), class: "reply_link", remote: true %>
+
+  <%= render answer.answers %>
+</div>
