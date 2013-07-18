@@ -1,3 +1,31 @@
+== Todo List (Adding test as you add features)
+
+- [x] Visitors can see all questions
+- [x] Visitors can add answers 
+- [x] Visitors create an question
+- [x] Visitors create an answer
+- [ ] Visitors can reply to answers
+- [ ] Visitors can see number of views of the question
+ 
+Add Users Auth (using devise)
+- [ ] Users can create an account
+- [ ] User can login
+- [ ] Only users can add questions
+- [ ] Only users can add answers
+- [ ] Only users can add replies
+- [ ] Users can edit questions
+- [ ] Users can delete their question
+- [ ] Users can see all the questions they've posted
+- [ ] User can assign questions tags
+- [ ] User can search by tags
+ 
+- [ ] Visitors can sort questions by most recent 
+- [ ] Users can sort by trending
+- [ ] Users can short by highest votes
+- [ ] User can upload images with their questions
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
