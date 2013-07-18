@@ -1,5 +1,9 @@
 class Answer < ActiveRecord::Base
-	attr_accessible :content, :question_id
-	belongs_to :question
-	validates :content, :question_id, :presence => true
+	attr_accessible :content, :answerable_id, :answerable_type
+	
+  belongs_to :answerable, polymorphic: true
+
+  has_many :answers, as: :answerable
+
+	validates :content, :answerable, :presence => true
 end

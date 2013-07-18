@@ -3,15 +3,18 @@
 <h1>Question: <%= @question.title %></h1>
 <h2>Question content: <%= @question.content %></h2>
 
+<%= form_for @answer do |f| %>
+  <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 90, rows: 10 %><br />
+  <%= f.hidden_field :answerable_id, :value => @question.id %>
+  <%= f.hidden_field :answerable_type, :value => @question.class %>
+  <%= f.submit %>
+<% end %>
+
+
 <h4>Answers:</h4>
 <ul>
-	<% @question.answers.each do |answer| %>
+  <% @question.answers.each do |answer| %>
 		<li><%= answer.content %></li>
+    <%= link_to "Reply", new_answer_answer_path(answer), class: "reply_link", remote: true %>
 	<% end %>
 </ul>
-
-<%= form_for @answer do |f| %>
-	<%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 90, rows: 10 %><br />
-	<%= f.hidden_field :question_id, :value => @question.id %>
-	<%= f.submit %>
-<% end %>
