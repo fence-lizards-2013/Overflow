@@ -17,4 +17,11 @@ describe "Show Page" do
 			expect(page).to have_content "DO I LOOK FAT IN DIS??"
 		end
 	end
+
+	context "form to create new answer" do 
+		it "should be present on the show question page" do 
+			visit question_path(question)
+			expect(page).to have_selector('form')
+		end
+	end
 end
