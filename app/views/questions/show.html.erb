@@ -1,20 +1,20 @@
-<%= link_to "Back to all questions", questions_path %> 
+<div id = "question">
+  <%= link_to "Back to all questions", questions_path %> 
+  <h1>Question: <%= @question.title %></h1>
+  <h2>Question content: <%= @question.content %></h2>
 
-<h1>Question: <%= @question.title %></h1>
-<h2>Question content: <%= @question.content %></h2>
+  <div class="answer">
 
-<%= form_for @answer do |f| %>
-  <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 90, rows: 10 %><br />
+  <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
+  <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
   <%= f.hidden_field :answerable_id, :value => @question.id %>
   <%= f.hidden_field :answerable_type, :value => @question.class %>
   <%= f.submit %>
 <% end %>
 
 
-<h4>Answers:</h4>
-<ul>
-  <% @question.answers.each do |answer| %>
-		<li><%= answer.content %></li>
-    <%= link_to "Reply", new_answer_answer_path(answer), class: "reply_link", remote: true %>
-	<% end %>
-</ul>
+    <h4>Replies</h4>
+
+    <%= render @question.answers %>
+  </div>
+</div>

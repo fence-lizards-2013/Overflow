@@ -1,11 +1,16 @@
 var Answerable = {
   init: function(){
-    $('.reply_link').on('ajax:success', this.renderForm);
+    $('#question').on('ajax:success', '.reply_link', this.renderForm);
+    $('#question').on('ajax:success', 'form', this.renderAnswer);
   },
 
   renderForm: function(event, data) {
-    console.log("Returned From aJAx")
-    $(this).after(data)
+    $(this).after(data);
+  },
+
+  renderAnswer: function(event,data) {
+    $(this).closest('.answer').append(data);
+    $('.foo').remove();
   }
 };
 

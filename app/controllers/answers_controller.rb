@@ -7,7 +7,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.create(params[:answer])
-    redirect_to question_path(@answer.answerable)
+    @answer = Answer.create!(params[:answer])
+    render :json => render_to_string(partial: 'answer', locals: {answer: @answer}).to_json
   end
 end
