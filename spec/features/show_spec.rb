@@ -1,0 +1,20 @@
+require 'spec_helper'
+
+describe "Show Page" do
+	let(:content)  { "this is the content" }
+	let(:title)    { "this is the title" }
+	let(:question) { Question.create(content: content, title: title) }
+
+	context "link to go back" do 
+		it "should have the link to go back to the index page" do 
+			visit question_path(question)
+			page.should have_selector(:link, "Back to all questions")
+		end
+
+		it "should take you back to the index page" do
+			visit question_path(question)
+			click_link('Back to all questions')
+			expect(page).to have_content "DO I LOOK FAT IN DIS??"
+		end
+	end
+end
