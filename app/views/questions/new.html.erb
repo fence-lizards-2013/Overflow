@@ -1,0 +1,14 @@
+<header>
+  <h1>DO I LOOK FAT IN DIS??</h1>
+</header>
+
+<h2>New Question Form</h2>
+
+<%= form_for @question do |f| %>
+ 
+  <%= f.text_field :title , placeholder: "Title" %><br />
+
+  <%= f.text_area :content, placeholder: "Content" %><br />
+
+<%= f.submit %>
+<% end %>
