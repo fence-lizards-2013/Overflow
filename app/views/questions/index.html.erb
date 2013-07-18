@@ -2,7 +2,9 @@
   <h1>DO I LOOK FAT IN DIS??</h1>
 </header>
 
-<%= link_to "New Question", new_question_path %>
+<% if @user %>
+  <%= link_to "New Question", new_question_path %>
+<% end %>
 <br><br><br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
