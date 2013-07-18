@@ -31,4 +31,15 @@ describe "Index Page" do
 			expect(page).to have_content "this is the title"
 		end
 	end
+
+	context "form to create a new question" do 
+		it "should fill out the form and show the new question page" do
+			visit new_question_path
+			fill_in 'title', :with => "this is the title"
+			fill_in 'content', :with => "this is the content"
+			click_on 'Create Question'
+			expect(page).to have_content "this is the title"
+			expect(page).to have_content "this is the content"
+		end
+	end
 end
