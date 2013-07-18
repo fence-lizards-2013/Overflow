@@ -23,5 +23,12 @@ describe "Show Page" do
 			visit question_path(question)
 			expect(page).to have_selector('form')
 		end
+
+		it "should add answer to the page after form submit" do 
+			visit question_path(question)
+			fill_in 'content', :with => "this is the answer"
+			click_on('Create Answer')
+			expect(page).to have_content "this is the answer"
+		end
 	end
 end
