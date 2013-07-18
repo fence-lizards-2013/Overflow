@@ -24,4 +24,17 @@ describe "Questions" do
       expect(question.title).to eq(title)
     end
   end
+
+  context "#view_count" do
+    it "has a default value of 0" do
+      expect(question.save.view_count).to eq(0)
+    end
+
+  end
+
+  context "#viewed!" do
+    it "updates the view_count attr in the database" do
+      expect(question.save.viewed!.view_cound).to eq(1)
+    end
+  end
 end
