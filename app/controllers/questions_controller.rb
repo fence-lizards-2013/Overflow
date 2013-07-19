@@ -1,9 +1,7 @@
 class QuestionsController < ApplicationController
   
   def index
-    p "*"*50
     @user = current_user
-    p @user
     @questions = Question.all
   end
 

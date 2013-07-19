@@ -23,8 +23,4 @@ describe "questions/index.html.erb" do
     expect(rendered).to have_content("DO I LOOK FAT IN DIS??")
   end
 
-  it "should have new question link" do
-    expect(rendered).to have_link("New Question")
-  end
-
 end
