@@ -3,13 +3,16 @@
 </header>
 
 <% if @user %>
-  <%= link_to "New Question", new_question_path %>
+<%= link_to "New Question", new_question_path %>
 <% end %>
 <br><br><br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
-    <p>views: <%= question.view_count %> <%= link_to "#{question.title}", question %> 
-       </p>
+  <p>views: <%= question.view_count %> 
+    answers: <%= question.answers.count %>
+    <%= link_to "#{question.title}", question %> 
+  </p>
+
   <% end %>
 </div>
 
