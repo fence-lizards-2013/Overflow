@@ -26,7 +26,8 @@ gem 'jquery-rails'
 group :development, :test do
   gem "rspec-rails"
   gem "capybara"
-  gem "factory_girl"
+  gem "launchy"
+  gem "factory_girl_rails"
   gem "database_cleaner"
   gem "shoulda"
   gem "faker"
