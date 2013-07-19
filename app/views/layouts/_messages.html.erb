@@ -1,4 +1,5 @@
 <% flash.each do |name, msg| %>
+  <!-- REVIEW: when is msg not a String? -->
   <% if msg.is_a?(String) %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>

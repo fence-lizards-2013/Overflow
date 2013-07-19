@@ -6,6 +6,8 @@ describe Question do
   let(:question) { Question.new(title: title, content: content)  }
 
   it "requires a title" do
+    # REVIEW: I would use new rather than create. New attempts to save
+    # it in the db, which you don't really need to do.
     expect(Question.create(content: content)).to be_invalid
   end
 
@@ -13,6 +15,7 @@ describe Question do
     expect(Question.create(title: title)).to be_invalid
   end
 
+  # REVIEW: you're testing active record, don't.
   context "#title" do
     it "returns a title" do
       expect(question.title).to eq(title)

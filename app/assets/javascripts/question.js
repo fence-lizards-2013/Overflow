@@ -1,3 +1,5 @@
+// REVIEW: objects FTW (that's the first time I ever used FTW, big deal)
+// nice clean code.
 var Answerable = {
   init: function(){
     $('#question').on('ajax:success', '.reply_link', this.renderForm);

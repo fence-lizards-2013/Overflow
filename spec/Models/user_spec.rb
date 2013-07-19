@@ -3,6 +3,8 @@ require 'spec_helper'
 describe User do
 
   before(:each) do
+    # REVIEW: use let, it's preferred:
+    # let(:attr) { {...} }
     @attr = {
       :name => "Example User",
       :email => "user@example.com",
@@ -12,6 +14,7 @@ describe User do
   end
 
   it "should create a new instance given a valid attribute" do
+    # REVIEW: this test doesn't do anything.
     User.create!(@attr)
   end
 
@@ -44,6 +47,7 @@ describe User do
 
   it "should reject email addresses identical up to case" do
     upcased_email = @attr[:email].upcase
+    # REVIEW: why create! ?
     User.create!(@attr.merge(:email => upcased_email))
     user_with_duplicate_email = User.new(@attr)
     user_with_duplicate_email.should_not be_valid
@@ -87,6 +91,7 @@ describe User do
   describe "password encryption" do
 
     before(:each) do
+      # REVIEW: why use !
       @user = User.create!(@attr)
     end
 

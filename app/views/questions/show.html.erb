@@ -1,10 +1,10 @@
 <div id = "question">
-  <%= link_to "Back to all questions", questions_path %> 
+  <%= link_to "Back to all questions", questions_path %>
   <h1>Question: <%= @question.title %></h1>
   <h2>Question content: <%= @question.content %></h2>
 
   <div class="answer">
-
+  <!-- REVIEW: indent please -->
   <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
   <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
   <%= f.hidden_field :answerable_id, :value => @question.id %>

@@ -2,13 +2,14 @@
   <h1>DO I LOOK FAT IN DIS??</h1>
 </header>
 
+<!-- REVIEW: use current_user instead of @user -->
 <% if @user %>
   <%= link_to "New Question", new_question_path %>
 <% end %>
 <br><br><br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
-    <p>views: <%= question.view_count %> <%= link_to "#{question.title}", question %> 
+    <p>views: <%= question.view_count %> <%= link_to "#{question.title}", question %>
        </p>
   <% end %>
 </div>

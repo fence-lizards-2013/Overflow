@@ -1,3 +1,4 @@
+# REVIEW: this folder name needs to be downcased!
 require 'spec_helper'
 
 describe Answer do
@@ -9,17 +10,17 @@ describe Answer do
 	subject { answer }
 	it {should validate_presence_of :answerable}
 	it {should validate_presence_of :content}
-	context "#create" do 
-		it "should have a content field" do 
+	context "#create" do
+		it "should have a content field" do
 			expect(answer.content).to eq(content)
 		end
 
-		it "should NOT save if content field is missing" do 
+		it "should NOT save if content field is missing" do
 			answer.content = nil
 			expect(answer).to be_invalid
 		end
 
-		it "should NOT save if answerable is missing" do 
+		it "should NOT save if answerable is missing" do
 			answer.answerable = nil
 			expect(answer).to be_invalid
 		end
