@@ -12,7 +12,7 @@ require 'faker'
   Question.create(title:Faker::Company.bs,content:Faker::Lorem.sentence(3))
 end
 
-30.times do
-  Answer.create(content:Faker::Lorem.sentence(3),answerable_id:rand(1..10), answerable_type: "Question")  
+50.times do
+  Answer.create(content:Faker::Lorem.sentence(4),answerable_id:rand(1..10), answerable_type: "Question")  
 end
 
