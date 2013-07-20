@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+
   def index
     @user = current_user
     @questions = choose_sort(params[:sort_choice])

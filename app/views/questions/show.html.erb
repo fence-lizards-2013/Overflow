@@ -10,10 +10,10 @@
   <div class="answer">
 
     <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
-    <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
-    <%= f.hidden_field :answerable_id, :value => @question.id %>
-    <%= f.hidden_field :answerable_type, :value => @question.class %>
-    <%= f.submit %>
+      <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
+      <%= f.hidden_field :answerable_id, :value => @question.id %>
+      <%= f.hidden_field :answerable_type, :value => @question.class %>
+      <%= f.submit %>
     <% end %>
 
 

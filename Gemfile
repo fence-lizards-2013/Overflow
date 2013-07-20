@@ -31,6 +31,8 @@ group :development, :test do
   gem "database_cleaner"
   gem "shoulda"
   gem "faker"
+  gem 'guard'
+  gem 'guard-rspec'
 end
 
 gem 'rack-cache', :require => 'rack/cache'
