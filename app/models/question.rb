@@ -12,4 +12,19 @@ class Question < ActiveRecord::Base
   def viewed!
   	self.update_attribute :view_count, self.view_count+1
   end
+
+  def self.answer_count_sort
+    sorted = self.all.sort! {|a,b| a.answers.count <=> b.answers.count }
+    sorted.reverse!
+  end
+
+   def self.view_count_sort
+    sorted = self.all.sort! {|a,b| a.view_count <=> b.view_count }
+    sorted.reverse!
+  end
+
+  def self.newest_sort
+    sorted = self.all.sort! {|a,b| a.created_at <=> b.created_at }
+    sorted.reverse!
+  end
 end

@@ -5,7 +5,16 @@
 <% if @user %>
 <%= link_to "New Question", new_question_path %>
 <% end %>
-<br><br><br>
+
+<div class="order_dropdown">
+
+  <%= form_tag(root_path, :method => "post") do %>
+  <%= select_tag(:sort_choice, options_for_select([["View Count", "view"], ["Answer Count", "answer"],["Created at", "created"]]))  %>
+  <%= submit_tag %>
+  <% end %>
+</div>
+
+<br><br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
   <p>views: <%= question.view_count %> 
@@ -14,6 +23,9 @@
   </p>
 
   <% end %>
+
 </div>
+
+
 
 
