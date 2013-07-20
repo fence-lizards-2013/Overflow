@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719222222) do
+ActiveRecord::Schema.define(:version => 20130720215951) do
 
   create_table "answers", :force => true do |t|
     t.string  "content"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130719222222) do
     t.integer  "view_count", :default => 0
     t.string   "image_uid"
     t.string   "image_name"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

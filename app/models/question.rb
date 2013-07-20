@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
   image_accessor :image
 
   has_many :answers, as: :answerable
+  belongs_to :user
 
   validates_presence_of :title, :content 
   #we will come back to this later  

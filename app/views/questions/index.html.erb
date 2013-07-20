@@ -8,9 +8,13 @@
 
 <div class="order_dropdown">
 
+
+
+
   <%= form_tag(root_path, :method => "post") do %>
+
   <%= select_tag(:sort_choice, options_for_select([["View Count", "view"], ["Answer Count", "answer"],["Created at", "created"]]))  %>
-  <%= submit_tag %>
+  <%= submit_tag "Submit"%>
   <% end %>
 </div>
 
