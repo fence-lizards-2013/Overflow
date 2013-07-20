@@ -1,6 +1,7 @@
 <%= form_for answer, remote: true, :html => {:class => "foo"} do |f| %>
-  <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
+  <%= f.text_area :content, id: "content", placeholder: "Comment on Answer", cols: 20, rows: 5 %><br />
   <%= f.hidden_field :answerable_id, :value => answerable.id %>
   <%= f.hidden_field :answerable_type, :value => answerable.class %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit %>
 <% end %>

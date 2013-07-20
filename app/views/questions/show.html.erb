@@ -13,6 +13,7 @@
       <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
       <%= f.hidden_field :answerable_id, :value => @question.id %>
       <%= f.hidden_field :answerable_type, :value => @question.class %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit %>
     <% end %>
 

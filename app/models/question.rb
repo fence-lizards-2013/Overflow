@@ -1,8 +1,9 @@
 class Question < ActiveRecord::Base
-  attr_accessible :title, :content, :image, :retained_image
+  attr_accessible :title, :content, :image, :retained_image, :user_id
   image_accessor :image
 
   has_many :answers, as: :answerable
+  # has_many :answers
   belongs_to :user
 
   validates_presence_of :title, :content 

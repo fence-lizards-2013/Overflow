@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20130720215951) do
     t.string  "content"
     t.integer "answerable_id"
     t.string  "answerable_type"
+    t.integer "user_id"
   end
 
   create_table "questions", :force => true do |t|

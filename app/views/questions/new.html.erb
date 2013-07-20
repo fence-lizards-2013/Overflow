@@ -9,5 +9,6 @@
 <%= f.text_area :content, id: "content", placeholder: "Content" %> <br/>
 <%= f.file_field :image %> <br>
 <%= f.hidden_field :retained_image %>
+<%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.submit %>
 <% end %>
