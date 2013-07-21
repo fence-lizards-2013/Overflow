@@ -3,10 +3,12 @@ DbcOverflow::Application.routes.draw do
   devise_for :users
   resources :questions do
     resources :answers, only: [:new, :create]
+    resources :tags, only: [:new, :create]
   end
   resources :answers, only: [:new, :create] do
     resources :answers, only: [:new, :create] 
   end
+  resources :users, only: [:show]
 
 
   root to: "questions#index"

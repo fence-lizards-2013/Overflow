@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @question.viewed!
-  
+    
     @answer = Answer.new
 
   end
@@ -18,11 +18,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(params[:question])
+    
+    tags = create_tags(params[:question][:tags])
+    
+    @question = Question.create(title: params[:question][:title], content: params[:question][:content], user_id: params[:question][:user_id], image_uid: params[:question][:image_uid], image_name: params[:question][:image_name])
+    @question.tags << tags
     redirect_to question_path(@question)
   end
 
-private
+  private
 
   def choose_sort(sort_choice)
 
@@ -36,5 +40,13 @@ private
     else
       Question.order(:view_count).reverse
     end
+  end
+
+  def create_tags(tags)
+    tag_list = []
+    tags.split(/[\s,]+/).each do |tag|
+      tag_list << Tag.create(tag_name: tag)
+    end
+    tag_list
   end
 end

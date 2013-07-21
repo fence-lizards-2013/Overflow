@@ -1,8 +1,11 @@
 class Question < ActiveRecord::Base
-  attr_accessible :title, :content, :image, :retained_image, :user_id
+  attr_accessible :title, :content, :image, :retained_image, :user_id, :tags, :image_uid, :image_name
   image_accessor :image
 
   has_many :answers, as: :answerable
+  has_many :question_tags
+  has_many :tags, through: :question_tags
+
   # has_many :answers
   belongs_to :user
 
@@ -17,16 +20,6 @@ class Question < ActiveRecord::Base
 
   def self.answer_count_sort
     sorted = self.all.sort! {|a,b| a.answers.count <=> b.answers.count }
-    sorted.reverse!
-  end
-
-   def self.view_count_sort
-    sorted = self.all.sort! {|a,b| a.view_count <=> b.view_count }
-    sorted.reverse!
-  end
-
-  def self.newest_sort
-    sorted = self.all.sort! {|a,b| a.created_at <=> b.created_at }
     sorted.reverse!
   end
 end

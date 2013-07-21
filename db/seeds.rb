@@ -8,13 +8,24 @@
 
 require 'faker'
 
+tags = []
+3.times do
+  tags << Tag.create(tag_name: Faker::Company.bs)
+end
+
 10.times do
-  Question.create(title:Faker::Company.bs,content:Faker::Lorem.sentence(3),user_id: 1)
+  Question.create(title:Faker::Company.bs,content:Faker::Lorem.sentence(3),user_id: 1).tags << tags.sample
 end
 
 50.times do
   Answer.create(content:Faker::Lorem.sentence(4),answerable_id:rand(1..10), answerable_type: "Question", user_id: 1)  
 end
 
-User.create(email:Faker::Internet.email, password:'12345678')
+User.create(name:'ADMIN', email:'fabulous@faballthetime.com', password:'12345678', admin:true)
+User.create(name:'ADAM', email:'test@gmail.com', password: '12345678')
+
+
+Tag.create(tag_name:"shoes")
+Tag.create(tag_name:"hat")
+Tag.create(tag_name:"iceburg")
 

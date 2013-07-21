@@ -2,19 +2,28 @@
   <%= link_to "Back to all questions", questions_path %> 
   <h1>Question: <%= @question.title %></h1>
   <% if @question.image %>
-    <%= image_tag @question.image.url %>
-    <%= image_tag @question.image.thumb('50x50#').url %>
+  <%= image_tag @question.image.url %>
+  <%= image_tag @question.image.thumb('50x50#').url %>
   <% end %>
   <h2>Question content: <%= @question.content %></h2>
+  <% @question.tags.each do |tag| %>
+  <ul>
+    <li style="color: blue;">
+      <%=tag.tag_name%>
+    </li>
+  </ul>
+  <% end %>
 
   <div class="answer">
 
-    <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
+    <% if current_user %>
+      <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
       <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
       <%= f.hidden_field :answerable_id, :value => @question.id %>
       <%= f.hidden_field :answerable_type, :value => @question.class %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit %>
+      <% end %>
     <% end %>
 
 
