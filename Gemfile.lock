@@ -78,7 +78,6 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.0)
     formatador (0.2.4)
-    gravtastic (3.2.6)
     guard (1.8.1)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
@@ -208,7 +207,6 @@ DEPENDENCIES
   dragonfly (~> 0.9.15)
   factory_girl_rails
   faker
-  gravtastic
   guard
   guard-rspec
   jquery-rails

@@ -1,0 +1,12 @@
+<h2> Welcome <%= current_user.email %> </h2>
+
+
+<%= link_to 'Edit Account', edit_user_registration_path %>
+
+
+<p><%= image_tag avatar_url(current_user) %></p>
+
+<% current_user.questions.each do |question| %>
+<p><%= link_to "#{question.title}", question %></p>
+<% end %>
+
