@@ -1,7 +1,6 @@
 .answer {
-   position: relative;
+  position: relative;
   left: 40px;
-  float: left;
 }
 
 #homepage-listings {
@@ -10,13 +9,21 @@
   padding: 20px; 
 }
 
+#homepage-content {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
 div#main {
   margin: auto 100px;
 }
 
 #question {
-float: left;
+// float: left;
 }
+
+
+
 
 #tags_items {
   list-style-type: none;

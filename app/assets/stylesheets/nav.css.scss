@@ -11,6 +11,23 @@ h1 {
   font-family: 'Prosto One', cursive;
 }
 
+.nav{
+background-color: #1abc9c;
+width: 100%;
+}
+
+.nav li:nth-child(n+2){
+  float: right;
+}
+
+.nav a:visited {
+color: white;
+}
+
+
+
+
+
 #flash_notice, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
@@ -25,4 +42,6 @@ h1 {
   background-color: #FCC;
   border: solid 1px #C66;
 }
+
+
 

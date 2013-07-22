@@ -14,11 +14,11 @@ tags = []
 end
 
 10.times do
-  Question.create(title:Faker::Company.bs,content:Faker::Lorem.sentence(3),user_id: 1).tags << tags.sample
+  Question.create(title:Faker::Company.bs,content:Faker::Lorem.sentence(7),user_id: 1).tags << tags.sample
 end
 
 50.times do
-  Answer.create(content:Faker::Lorem.sentence(4),answerable_id:rand(1..10), answerable_type: "Question", user_id: 1)  
+  Answer.create(content:Faker::Lorem.sentence(7),answerable_id:rand(1..10), answerable_type: "Question", user_id: 1)  
 end
 
 User.create(name:'ADMIN', email:'fabulous@faballthetime.com', password:'12345678', admin:true)

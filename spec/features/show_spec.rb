@@ -16,7 +16,7 @@ describe "Show Page" do
 		it "should take you back to the index page" do
 			visit question_path(question)
 			click_link('Back to all questions')
-			expect(page).to have_content "DO I LOOK FAT IN DIS??"
+			expect(page).to have_content "Do I Look FAT in Dis??"
 		end
 	end
 
