@@ -14,7 +14,8 @@
   <% end %>
 </div>
 
-<br><br>
+<br>
+<br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
   <p id='homepage-listings'>
@@ -23,6 +24,9 @@
     <% end %>
     <%= link_to "#{question.title}", question %> 
     Views: <%= question.view_count %> 
+    &nbsp
+    &nbsp
+    &nbsp
     Answers: <%= question.answers.count %>
   </p>
 

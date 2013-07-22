@@ -1,6 +1,7 @@
 .answer {
    position: relative;
   left: 40px;
+  float: left;
 }
 
 #homepage-listings {
@@ -19,8 +20,7 @@ float: left;
 
 #tags_items {
   list-style-type: none;
-  // color: white;
-  // background-color: blue;
+
   display: inline-block;
   float: left;
   margin-right: 8px; 
@@ -32,10 +32,12 @@ float: left;
 
 #tag_label {
   list-style-type: none;
-  // color: white;
-  // background-color: blue;
   display: inline-block;
   float: left;
   margin-right: 8px; 
   margin-bottom: 8px; 
+}
+
+li {
+  list-style-type: none;
 }

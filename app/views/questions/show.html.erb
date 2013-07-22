@@ -5,21 +5,23 @@
   <%= image_tag @question.image.url %>
   <% end %>
   <h2>Question content: <%= @question.content %></h2>
-
+   
+   <% if @question.tags.any? %>
   <ul>
     <li id="tag_label">Tags:</li> 
     <% @question.tags.each do |tag| %>
     <li id= "tags_items">
       <%=tag.tag_name%>
     </li>
-    <% end %>
   </ul>
+   <% end %>
+   <% end %>
   <br>
   <div class="answer">
 
     <% if current_user %>
     <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
-    <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
+    <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 50, rows: 7 %><br />
     <%= f.hidden_field :answerable_id, :value => @question.id %>
     <%= f.hidden_field :answerable_type, :value => @question.class %>
     <%= f.hidden_field :user_id, value: current_user.id %>
