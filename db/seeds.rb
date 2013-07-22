@@ -9,8 +9,8 @@
 require 'faker'
 
 tags = []
-3.times do
-  tags << Tag.create(tag_name: Faker::Lorem.words(1))
+3.times do |index|
+  tags << Tag.create(tag_name: Faker::Lorem.words(3)[index])
 end
 
 10.times do
