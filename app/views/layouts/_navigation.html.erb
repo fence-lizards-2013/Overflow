@@ -1,10 +1,13 @@
-<%= link_to "Do I look fat in Dis?", root_path, :class => 'brand' %>
+
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
 <ul class="nav">
+  <li>
+    <%= link_to "Do I look FAT in Dis?", root_path, :class => 'brand' %>
   <% if user_signed_in? %>
   <li>
     <%= link_to 'View Profile', user_path(current_user) %>
   </li>
-   <li>
+  <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
   </li>
   <% else %>
@@ -12,7 +15,8 @@
     <%= link_to 'Sign Up', new_user_registration_path %>
   </li>
   <li>
-    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to 'Sign In', new_user_session_path %>
   </li>
   <% end %>
 </ul>
+</div>

@@ -20,8 +20,8 @@ class QuestionsController < ApplicationController
   def create
     
     tags = create_tags(params[:question][:tags])
-    
-    @question = Question.create(title: params[:question][:title], content: params[:question][:content], user_id: params[:question][:user_id], image_uid: params[:question][:image_uid], image_name: params[:question][:image_name])
+    params[:question].delete(:tags)
+    @question = Question.create(params[:question])
     @question.tags << tags
     redirect_to question_path(@question)
   end

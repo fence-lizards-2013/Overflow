@@ -2,3 +2,40 @@
    position: relative;
   left: 40px;
 }
+
+#homepage-listings {
+  border-bottom: solid 1px grey;
+  width: 700px;
+  padding: 20px; 
+}
+
+div#main {
+  margin: auto 100px;
+}
+
+#question {
+float: left;
+}
+
+#tags_items {
+  list-style-type: none;
+  // color: white;
+  // background-color: blue;
+  display: inline-block;
+  float: left;
+  margin-right: 8px; 
+  margin-bottom: 8px; 
+  padding: 3px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+#tag_label {
+  list-style-type: none;
+  // color: white;
+  // background-color: blue;
+  display: inline-block;
+  float: left;
+  margin-right: 8px; 
+  margin-bottom: 8px; 
+}

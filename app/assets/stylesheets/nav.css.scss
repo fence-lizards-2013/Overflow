@@ -1,24 +1,14 @@
-.brand {
-  float: left;
-  margin-right: 65%;
-  // padding-right: 65%;
+div#main {
+ margin: 0 auto;
+ text-align: center;
 }
 
-header ul li a {
-	display: inline-block;
-	padding-right: 8px;
-}
-header{
-	display: inline;
+div#homepage-content {
+  text-align : left
 }
 
-ul.nav {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
-}
-ul.nav li {
-  display: inline;
+h1 {
+  font-family: 'Prosto One', cursive;
 }
 
 #flash_notice, #flash_alert {
@@ -35,3 +25,4 @@ ul.nav li {
   background-color: #FCC;
   border: solid 1px #C66;
 }
+

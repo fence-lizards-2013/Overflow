@@ -3,27 +3,29 @@
   <h1>Question: <%= @question.title %></h1>
   <% if @question.image %>
   <%= image_tag @question.image.url %>
-  <%= image_tag @question.image.thumb('50x50#').url %>
   <% end %>
   <h2>Question content: <%= @question.content %></h2>
-  <% @question.tags.each do |tag| %>
+
   <ul>
-    <li style="color: blue;">
+    <li id="tag_label">Tags:</li> 
+    <% @question.tags.each do |tag| %>
+    <li id= "tags_items">
       <%=tag.tag_name%>
     </li>
+    <% end %>
   </ul>
-  <% end %>
-
+  <br>
   <div class="answer">
 
     <% if current_user %>
-      <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
-      <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
-      <%= f.hidden_field :answerable_id, :value => @question.id %>
-      <%= f.hidden_field :answerable_type, :value => @question.class %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.submit %>
-      <% end %>
+    <%= form_for @answer, remote: true, :html => {:class => "foo2"} do |f| %>
+    <%= f.text_area :content, id: "content", placeholder: "Answer the Question", cols: 20, rows: 5 %><br />
+    <%= f.hidden_field :answerable_id, :value => @question.id %>
+    <%= f.hidden_field :answerable_type, :value => @question.class %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <br>
+    <%= f.submit %>
+    <% end %>
     <% end %>
 
 

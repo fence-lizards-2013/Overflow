@@ -1,15 +1,11 @@
-<header>
-  <h1>DO I LOOK FAT IN DIS??</h1>
-</header>
+<h1 id='title'>DO I LOOK FAT IN DIS??</h1>
 
 <% if @user %>
 <%= link_to "New Question", new_question_path %>
+<br><br>
 <% end %>
 
 <div class="order_dropdown">
-
-
-
 
   <%= form_tag(root_path, :method => "post") do %>
 
@@ -21,9 +17,13 @@
 <br><br>
 <div id='homepage-content'>
   <% @questions.each do |question| %>
-  <p>views: <%= question.view_count %> 
-    answers: <%= question.answers.count %>
+  <p id='homepage-listings'>
+    <% if question.image %>
+    <%= image_tag question.image.thumb('100x100#').url %> <br>
+    <% end %>
     <%= link_to "#{question.title}", question %> 
+    Views: <%= question.view_count %> 
+    Answers: <%= question.answers.count %>
   </p>
 
   <% end %>
