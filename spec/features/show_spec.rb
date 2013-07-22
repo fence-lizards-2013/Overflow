@@ -4,6 +4,8 @@ describe "Show Page" do
 	let(:content)  { "this is the content" }
 	let(:title)    { "this is the title" }
 	let(:question) { Question.create(content: content, title: title) }
+	let(:email) {"test@test.com"}
+	let(:password) {"12345678"}
 
 	context "link to go back" do 
 		it "should have the link to go back to the index page" do 
@@ -19,9 +21,12 @@ describe "Show Page" do
 	end
 
 	context "form to create new answer" do 
-		it "should be present on the show question page" do 
-			visit question_path(question)
-			expect(page).to have_selector('form')
+		before(:each) do
+			visit new_user_registration_path
+			fill_in 'Email', with: email
+			fill_in 'Password', with: password
+			fill_in 'Confirm Password', with: password
+			click_button "Sign up"
 		end
 
 		it "should add answer to the page after form submit" do 

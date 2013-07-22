@@ -9,16 +9,15 @@ describe "Index Page" do
 	let(:email) {"test@test.com"}
 	let(:password) {"12345678"}
 
+	before(:each) do
+		visit new_user_registration_path
+		fill_in 'Email', with: email
+		fill_in 'Password', with: password
+		fill_in 'Confirm Password', with: password
+		click_button "Sign up"
+	end
 
 	context "link to create new question" do 
-		before(:each) do
-			visit new_user_registration_path
-			fill_in 'Email', with: email
-			fill_in 'Password', with: password
-			fill_in 'Password confirmation', with: password
-			click_button "Sign up"
-		end
-
 		it "should have the link to create a new question" do 
 			expect(page).to have_link "New Question"
 		end
@@ -49,7 +48,8 @@ describe "Index Page" do
 			visit new_question_path
 			fill_in 'title', :with => "this is the title"
 			fill_in 'content', :with => "this is the content"
-			click_on 'Create Question'
+			attach_file 'image', Rails.root.join('app', 'assets', 'images', 'rails.png')
+			click_on 'Submit Question'
 			expect(page).to have_content "this is the title"
 			expect(page).to have_content "this is the content"
 		end
