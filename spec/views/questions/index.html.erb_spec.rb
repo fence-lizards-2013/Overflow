@@ -20,7 +20,7 @@ describe "questions/index.html.erb" do
   end
 
   it "should have awesome header" do
-    expect(rendered).to have_content("DO I LOOK FAT IN DIS??")
+    expect(rendered).to have_content("Do I Look FAT in Dis??")
   end
 
 end

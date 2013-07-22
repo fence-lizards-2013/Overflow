@@ -1,4 +1,4 @@
-<h1 id='title'>DO I LOOK FAT IN DIS??</h1>
+<h1 id='title'>Do I Look FAT in Dis??</h1>
 
 <% if @user %>
 <%= link_to "New Question", new_question_path %>
@@ -24,7 +24,6 @@
     <% end %>
     <%= link_to "#{question.title}", question %> 
     Views: <%= question.view_count %> 
-    &nbsp
     &nbsp
     &nbsp
     Answers: <%= question.answers.count %>
