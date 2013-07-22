@@ -9,7 +9,7 @@
   <br>
   <%= f.text_area :content, id: "content", placeholder: "Content" , :rows => 10%> <br/>
   <br>
-  <%= f.file_field :image %> <br><br>
+  <%= f.file_field :image, id: 'image' %> <br><br>
   <%= f.text_field :tags, placeholder: "Enter Tags", value: ''%>
   <br>
   <%= f.hidden_field :retained_image %>
