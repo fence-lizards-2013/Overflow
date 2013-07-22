@@ -1,9 +1,13 @@
 <div class="answer">
+  <div class="answer_content">
   <li><%= answer.content %></li>
+</div>
   <ul class="replies">
   </ul>
   <% if current_user %>
   <%= link_to "Reply", new_answer_answer_path(answer), class: "reply_link", remote: true %> 
+  <div class="reply">
   <%= render answer.answers %>
+    </div>
   <% end %>
 </div>

@@ -1,11 +1,14 @@
 <div id = "question">
+  <div id="back">
   <%= link_to "Back to all questions", questions_path %> 
-  <h1>Question: <%= @question.title %></h1>
+</div>
+  <h2><%= @question.title %></h1>
   <% if @question.image %>
   <%= image_tag @question.image.url %>
   <% end %>
-  <h2>Question content: <%= @question.content %></h2>
+  <h4><%= @question.content %></h2>
    
+   <div id="tags">
    <% if @question.tags.any? %>
   <ul>
     <li id="tag_label">Tags:</li> 
@@ -16,6 +19,7 @@
   </ul>
    <% end %>
    <% end %>
+   </div>
   <br>
   <div class="answer">
 

@@ -18,16 +18,26 @@ div#main {
   margin: auto 100px;
 }
 
-#question {
-// float: left;
+.answer_content {
+border-bottom: solid 1px black;
 }
 
+form#new_answer{
+  position: relative;
+}
 
+#tags{
+  position: relative;
+}
 
-
+#back{
+  margin-top: -20px;
+  float: left;
+}
 #tags_items {
   list-style-type: none;
-
+  position: relative;
+  left: 40px;
   display: inline-block;
   float: left;
   margin-right: 8px; 
