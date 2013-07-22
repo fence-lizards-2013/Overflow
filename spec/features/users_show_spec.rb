@@ -56,7 +56,5 @@ describe "User Show Page" do
 			click_button "Sign in"
 			expect(page).to have_content('New Question')
 		end
-
-		
 	end
 end
