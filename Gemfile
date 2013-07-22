@@ -34,6 +34,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'better_errors'
+  gem 'selenium-webdriver'
 end
 
 gem 'rack-cache', :require => 'rack/cache'
